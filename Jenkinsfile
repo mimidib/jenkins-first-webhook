@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
 	agent any
 	stages {
 	    stage("build"){
@@ -8,6 +8,12 @@ pipeline{
 		    sh "echo configuration on pipeline works"
 		    sh "python --version"
 		    sh "python pipeline.py"
+		}
+	    }
+	    stage("deployment"){
+		steps {
+		   sh "echo deployment stage has been completed"
+		   sg "echo good bye"
 		}
 	    }
 	}
